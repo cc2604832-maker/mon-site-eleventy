@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "css/images"
+public_folder: "/css/images"
+
+collections:
+  - name: "produits"
+    label: "Produits"
+    folder: "produits"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nom du produit", name: "title", widget: "string"}
+      - {label: "Prix (ex: 25 000 FCFA)", name: "prix", widget: "string"}
+      - {label: "Image du produit", name: "image", widget: "image"}
+      - {label: "Catégorie", name: "categorie", widget: "select", options: ["Électronique", "Accessoires", "Mode"]}
+      - {label: "Modèle de page", name: "layout", widget: "hidden", default: "layout.njk"}
+      - {label: "Tags", name: "tags", widget: "hidden", default: "produit"}
+      - {label: "Description", name: "body", widget: "markdown"}

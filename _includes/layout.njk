@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <style>
+    body { font-family: sans-serif; max-width: 600px; margin: 20px auto; padding: 0 10px; line-height: 1.6; }
+    nav a { margin-right: 15px; color: #0066cc; text-decoration: none; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/">Accueil</a>
+  </nav>
+  <hr>
+  <main>
+    {{ content | safe }}
+  </main>
+</body>
+</html>
+

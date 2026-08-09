@@ -4,19 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }}</title>
-  <style>
-    body { font-family: sans-serif; max-width: 600px; margin: 20px auto; padding: 0 10px; line-height: 1.6; }
-    nav a { margin-right: 15px; color: #0066cc; text-decoration: none; font-weight: bold; }
-  </style>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <nav>
-    <a href="/">Accueil</a>
-  </nav>
-  <hr>
+  <header>
+    <nav>
+      <a href="/">Accueil</a>
+      <a href="/a-propos/">À propos</a>
+    </nav>
+  </header>
+
   <main>
+    <h1>{{ title }}</h1>
     {{ content | safe }}
   </main>
+
+  <footer>
+    <p>&copy; 2026 Mon Site Eleventy - Propulsé par Termux</p>
+  </footer>
 </body>
 </html>
-

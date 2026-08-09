@@ -1,12 +1,15 @@
 ---
 layout: layout.njk
-title: Accueil - Mes Articles
+title: Bienvenue sur notre Boutique
 ---
 
-Bienvenue sur mon site ! Voici la liste de mes derniers articles :
-
-<ul>
-{% for post in collections.post %}
-  <li><a href="{{ post.url }}">{{ post.data.title }}</a> - {{ post.date | date: "%Y-%m-%d" }}</li>
+<div class="grid">
+{% for item in collections.produit %}
+  <div class="card">
+    <img src="{{ item.data.image }}" alt="{{ item.data.title }}">
+    <h2>{{ item.data.title }}</h2>
+    <div class="price">{{ item.data.prix }}</div>
+    <a href="{{ item.url }}" class="btn">Voir le produit</a>
+  </div>
 {% endfor %}
-</ul>
+</div>

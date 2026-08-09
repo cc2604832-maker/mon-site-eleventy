@@ -8,19 +8,30 @@
 </head>
 <body>
   <header>
+    <h1><a href="/" style="text-decoration:none; color:inherit;">Ma Boutique Pro</a></h1>
     <nav>
-      <a href="/">Accueil</a>
+      <a href="/">Catalogue</a>
       <a href="/a-propos/">À propos</a>
     </nav>
   </header>
 
   <main>
-    <h1>{{ title }}</h1>
-    {{ content | safe }}
+    {% if prix %}
+      <div style="max-width:600px; margin:0 auto; background:white; padding:20px; border-radius:12px;">
+        <img src="{{ image }}" alt="{{ title }}" style="width:100%; border-radius:8px;">
+        <h1>{{ title }}</h1>
+        <p style="font-size:1.5rem; color:#2b6cb0; font-weight:bold;">{{ prix }}</p>
+        <div style="margin:20px 0;">{{ content | safe }}</div>
+        <a href="https://wa.me/22500000000?text=Bonjour,%20je%20souhaite%20commander%20:%20{{ title }}" class="btn" style="background:#25D366;">Commander sur WhatsApp</a>
+      </div>
+    {% else %}
+      <h1>{{ title }}</h1>
+      {{ content | safe }}
+    {% endif %}
   </main>
 
   <footer>
-    <p>&copy; 2026 Mon Site Eleventy - Propulsé par Termux</p>
+    <p>&copy; 2026 Ma Boutique Eleventy - Propulsé par Termux & Netlify</p>
   </footer>
 </body>
 </html>
